@@ -1,0 +1,104 @@
+{% extends 'base.html' %} {% block titulo %}Acerca de{% endblock %} {% block
+contenido %}
+
+<!-- Encabezado con imagen -->
+<div class="container mt-5">
+  <div class="text-center">
+    <img
+      src="{{ url_for('static', filename='images/logotipo_restaurante.jpg') }}"
+      class="img-fluid rounded shadow-sm mb-4"
+      alt="AkiraCode Academy - Tu camino ninja en la programación"
+      style="max-height: 150px; object-fit: cover"
+    />
+  </div>
+  <h2 class="text-center mb-4">ACERCA El RINCÓN DEL GORDO</h2>
+  <p class="text-center">
+    En <strong>El Ricón del Gordo</strong> Creemos que la comida nos conecta con
+    nuestro Boemio interior y nos brinda <strong>energia</strong> para continuar
+    el dia y ser mas productivos.
+  </p>
+</div>
+
+<!-- Valores -->
+<div class="container mt-5">
+  <h2 class="text-center mb-4">NUESTROS VALORES</h2>
+  <div class="row text-center">
+    <div class="col-sm-4">
+      <div class="card shadow-sm">
+        <img
+          src="{{ url_for('static', filename='images/Mamá-Cocina.jpg') }}"
+          class="card-img-top"
+          alt="Innovación"
+        />
+        <div class="card-body">
+          <h5 class="card-title">
+            Autenticidad y Tradición (El Sabor de Mamá)
+          </h5>
+          <p class="card-text">
+            Nuestro compromiso principal es honrar las recetas nicaragüenses tal
+            como las conocemos: con el sazón tradicional y los ingredientes
+            correctos. ¿Qué significa para ti? Significa que cada vigorón, cada
+            nacatamal y cada porción de gallopinto se preparan con el mismo
+            cariño y los mismos métodos transmitidos de generación en
+            generación. Usamos ingredientes frescos y, siempre que es posible,
+            locales, para garantizar que el sabor que recibes es el de la casa,
+            el de la tierra. La tradición no es solo una palabra; es nuestro
+            ingrediente secreto.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card shadow-sm">
+        <img
+          src="{{ url_for('static', filename='images/0ea2tk.jpg') }}"
+          class="card-img-top"
+          alt="Compromiso"
+        />
+        <div class="card-body">
+          <h5 class="card-title">
+            Calidad y Frescura Garantizada (De Nuestra Cocina a Tu Mesa)
+          </h5>
+          <p class="card-text">
+            Entendemos que la comida a domicilio debe ser tan buena como si la
+            hubieras pedido en el comedor. Por eso, priorizamos la calidad y la
+            frescura en cada etapa. ¿Qué significa para ti? Significa que tu
+            comida se prepara solo después de haberla ordenado. Utilizamos
+            empaques especializados para que tu fritanga se mantenga crujiente y
+            tu sopa de queso llegue caliente. Garantizamos la máxima higiene y
+            el manejo cuidadoso de todos los alimentos, porque tu salud y tu
+            experiencia son lo más importante.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card shadow-sm">
+        <img
+          src="{{ url_for('static', filename='images/R.jpeg') }}"
+          class="card-img-top"
+          alt="Accesibilidad"
+        />
+        <div class="card-body">
+          <h5 class="card-title">
+            Transparencia y Conveniencia Digital (Comer Fácil, Sentirse Cerca)
+          </h5>
+          <p class="card-text">
+            Queremos que pedir tu plato nica favorito sea tan fácil como
+            disfrutarlo. Nuestro valor de transparencia asegura que siempre
+            sepas qué esperar, sin sorpresas. ¿Qué significa para ti? Tendrás un
+            proceso de pedido rápido e intuitivo, con fotos claras y
+            descripciones detalladas de los ingredientes (incluyendo alérgenos).
+            Seremos transparentes con los costos de envío y te ofreceremos un
+            sistema de seguimiento en tiempo real para que sepas el momento
+            exacto en que el sabor de Nicaragua estará en tu puerta. Te
+            prometemos una experiencia digital tan cálida y honesta como nuestra
+            comida.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

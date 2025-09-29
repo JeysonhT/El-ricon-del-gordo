@@ -1,0 +1,7 @@
+{% extends 'base.html' %} {% block titulo %}Error{% endblock %} {% block
+contenido %}
+<h1>Error</h1>
+<h1>{{ code }}</h1>
+<p>{{ message }}</p>
+<a href="{{ url_for('login.sigin') }}">Go back to Login</a>
+{% endblock %}

@@ -1,0 +1,120 @@
+{% extends 'base.html' %} {% block titulo %}El rincón del gordo{% endblock %} {%
+block contenido %}
+
+<!-- Carousel -->
+<div
+  id="carouselExample"
+  class="carousel slide"
+  data-bs-ride="carousel"
+  data-bs-interval="2000"
+>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img
+        src="{{ url_for('static', filename='images/ceviche-caribeno.jpg') }}"
+        class="d-block w-100"
+        alt="..."
+      />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="{{ url_for('static', filename='images/Delicias_nicaraguenses.jpeg') }}"
+        class="d-block w-100"
+        alt="..."
+      />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="{{ url_for('static', filename='images/Quesillo.jpeg') }}"
+        class="d-block w-100"
+        alt="..."
+      />
+    </div>
+  </div>
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselExample"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselExample"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon"></span>
+    <span class="visually-hidden">Siguiente</span>
+  </button>
+</div>
+
+<!-- Servicios -->
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Nuestros Serviciós</h2>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card h-100 shadow-sm">
+        <img
+          src="{{ url_for('static', filename='images/Comida_tipica.jpg') }}"
+          class="card-img-top"
+          alt="Web"
+        />
+        <div class="card-body">
+          <h5 class="card-title">Comida Tipica Nicaragüense</h5>
+          <p class="card-text">
+            Disfruta de el sabor tradicional de Nicaragua con nuestros platillos
+            típicos. Desde el delicioso gallo pinto hasta el mitico indio viejo,
+            cada bocado te transportará a las raíces culturales de nuestro país.
+            Perfecto para quienes buscan una experiencia culinaria auténtica y
+            llena de sabor.
+          </p>
+          <a href="#" class="btn btn-primary">Ver más</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card h-100 shadow-sm">
+        <img
+          src="{{ url_for('static', filename='images/Combo_Pescado.jpg') }}"
+          class="card-img-top"
+          alt="Productos"
+        />
+        <div class="card-body">
+          <h5 class="card-title">Comida marinera</h5>
+          <p class="card-text">
+            Saborea la brisa del mar en cada bocado. Deléitate con nuestros
+            platillos marineros, frescos y exquisitos, preparados con los
+            mejores ingredientes. ¡Una experiencia culinaria que te transportará
+            a la costa sin salir de la ciudad!
+          </p>
+          <a href="#" class="btn btn-primary">Ver más</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card h-100 shadow-sm">
+        <img
+          src="{{ url_for('static', filename='images/Fritangas.jpeg') }}"
+          class="card-img-top"
+          alt="Cursos"
+        />
+        <div class="card-body">
+          <h5 class="card-title">Fritangas clasicas</h5>
+          <p class="card-text">
+            Saborea el auténtico sabor de Nicaragua. Nuestras fritangas, con su
+            irresistible mezcla de carne asada, gallopinto y tajadas, te
+            transportarán directamente a las calles de Managua. ¡Cada bocado es
+            una fiesta de sabores tradicionales! ¿Listo para disfrutar de la
+            fritanga más deliciosa?
+          </p>
+          <a href="#" class="btn btn-primary">Ver más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
