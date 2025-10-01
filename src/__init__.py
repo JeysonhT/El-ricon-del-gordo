@@ -8,7 +8,7 @@ def create_app():
     
     app.config['MYSQL_HOST'] = 'localhost'
     app.config['MYSQL_PORT'] = 3306
-    app.config['MYSQL_USER'] = 'developer'
+    app.config['MYSQL_USER'] = 'JeysonhDev'
     app.config['MYSQL_PASSWORD'] = 'pandeplatano3'
     app.config['MYSQL_DB'] = 'Ventas'
     app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
