@@ -65,7 +65,11 @@ endblock %} {% block body %}
                   <h5 class="card-title">Perfil del Usuario</h5>
                   <!-- p class="card-text">Mostrar registro de usuarios</p> -->
 
-                  <a href="" class="btn btn-outline-success">Ver Detalles</a>
+                  <a
+                    href="{{ url_for('home.perfil' ) }}"
+                    class="btn btn-outline-success"
+                    >Ver Detalles</a
+                  >
                 </div>
               </div>
             </div>

@@ -23,10 +23,6 @@ def contactopost():
         user['mensaje'] = request.form.get('mensaje', '')
     return render_template("contactopost.html", usuario=user)
 
-@app.route('/usuario')
-def usuario():
-    return render_template("usuario.html")
-
 @app.route('/acercade')
 def acercade():
     return render_template("acercade.html")

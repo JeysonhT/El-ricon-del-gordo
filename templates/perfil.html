@@ -1,0 +1,171 @@
+{% extends "base_Admin.html" %} {% block titulo %}Perfil de Administrador{%
+endblock %} {% block body %}
+<style>
+  .profile-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+
+  .profile-card:hover {
+    transform: translateY(-10px);
+  }
+
+  .profile-header {
+    background: linear-gradient(45deg,
+        rgba(255, 99, 71, 0.8),
+        rgba(255, 165, 0, 0.8));
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+  }
+
+  .profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    margin: 75px auto 0px;
+    display: block;
+    position: relative;
+    z-index: 2;
+    background-color: #eee;
+  }
+
+  .user-name {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .user-email {
+    font-size: 1.1rem;
+    margin: 5px 0 0;
+    opacity: 0.9;
+  }
+
+  .profile-body {
+    padding: 30px;
+  }
+
+  .profile-bio {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .profile-section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ff6347;
+    padding-bottom: 10px;
+  }
+
+  .activity-list .list-group-item {
+    border: none;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+  }
+
+  .activity-list .list-group-item:last-child {
+    border-bottom: none;
+  }
+
+  .activity-icon {
+    font-size: 1.5rem;
+    color: #ff6347;
+    margin-right: 15px;
+  }
+
+  .activity-text {
+    font-size: 1rem;
+    color: #444;
+  }
+
+  .activity-time {
+    font-size: 0.85rem;
+    color: #999;
+    margin-left: auto;
+  }
+
+  .edit-profile-btn {
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+
+  .edit-profile-btn:hover {
+    background-color: #e5533d;
+    box-shadow: 0 4px 15px rgba(255, 99, 71, 0.4);
+  }
+</style>
+
+<div class="container mt-5 mb-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10">
+      <div class="profile-card">
+        <div class="profile-header">
+          <img src="{{ url_for('static', filename='images/persona-de-libre-dedicacion.png') }}" alt="Foto de perfil"
+            class="profile-picture" />
+          <h1 class="user-name">Admin</h1>
+          {% if email %}
+          <p class="user-email">{{ email }}</p>
+          {% endif %}
+        </div>
+
+        <div class="profile-body">
+          <div class="text-center mb-4">
+            <a href="{{url_for('user.get_users')}}" class="btn edit-profile-btn">
+              <i class="bi bi-pencil-fill me-2"></i> Administrar Usuarios
+            </a>
+          </div>
+
+          <p class="profile-bio">
+            "Amante de la buena comida y explorador de nuevos sabores. Aquí
+            comparto mis aventuras culinarias y mis platos favoritos."
+          </p>
+
+          <div class="profile-section">
+            <h3 class="profile-section-title">Actividad Reciente</h3>
+            <ul class="list-group activity-list">
+              <li class="list-group-item">
+                <i class="bi bi-chat-dots-fill activity-icon"></i>
+                <span class="activity-text">Comentó en la receta de <strong>"Carne Asada"</strong></span>
+                <span class="activity-time">hace 2 horas</span>
+              </li>
+              <li class="list-group-item">
+                <i class="bi bi-star-fill activity-icon"></i>
+                <span class="activity-text">Marcó como favorito <strong>"Rondón"</strong></span>
+                <span class="activity-time">hace 1 día</span>
+              </li>
+              <li class="list-group-item">
+                <i class="bi bi-hand-thumbs-up-fill activity-icon"></i>
+                <span class="activity-text">Le gustó la publicación sobre
+                  <strong>"Quesillos de Nagarote"</strong></span>
+                <span class="activity-time">hace 3 días</span>
+              </li>
+              <li class="list-group-item">
+                <i class="bi bi-plus-circle-fill activity-icon"></i>
+                <span class="activity-text">Se unió a la comunidad de "El Rincón del Gordo"</span>
+                <span class="activity-time">hace 1 semana</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

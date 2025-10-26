@@ -23,6 +23,10 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/El-rincon-del-gordo.css')}}"
+    />
     <!-- SweetAlert2 -->
     <link
       rel="stylesheet"
@@ -37,10 +41,29 @@ icons.min.css"
     />
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename='css/estilo.css') }}"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
     <!-- DataTables -->
-    <link href="DataTables/datatables.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/buttons/3.0.1/css/buttons.dataTables.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/2.0.0/css/dataTables.bootstrap5.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/buttons/3.0.0/css/buttons.bootstrap5.min.css"
+    />
   </head>
 
   <body class="bg-success bg-opacity-10">
@@ -65,8 +88,7 @@ icons.min.css"
             class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs
-            target="#navbarSupportedContent"
+            data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
@@ -120,7 +142,7 @@ icons.min.css"
 
               <li class="nav-item">
                 <!--Botones listar-->
-                <a class="nav-link" href="">Perfil</a>
+                <a class="nav-link" href="{{url_for('home.perfil')}}">Perfil</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href=""></a>
@@ -163,10 +185,68 @@ icons.min.css"
       crossorigin="anonymous"
     ></script>
 
+    <!-- jQuery -->
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://code.jquery.com/jquery-3.7.1.js"
+    ></script>
+
+    <!-- DataTables -->
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/2.0.3/js/dataTables.js"
+    ></script>
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/buttons/3.0.1/js/dataTables.buttons.js"
+    ></script>
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.colVis.js"
+    ></script>
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.html5.js"
+    ></script>
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.print.js"
+    ></script>
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/2.0.0/js/dataTables.bootstrap5.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/buttons/3.0.0/js/buttons.bootstrap5.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"
+    ></script>
+
     <!--MENSAJE DE ALERTA SweetAlert2-->
 
     <!--  <script src="{{url_for('static', filename='/js/script.js')}}"></script> -->
-    <script src="DataTables/datatables.min.js"></script>
 
     <!-- Mensaje de ALERTA SALIR DEL SISTEMA -->
     <script>
@@ -192,5 +272,6 @@ icons.min.css"
         }
       });
     </script>
+    {% block scripts %}{% endblock %}
   </body>
 </html>
