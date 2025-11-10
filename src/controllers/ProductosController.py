@@ -1,6 +1,8 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash, session
 from ..data.mysqlConexion import get_db
 import json
+from datetime import datetime, timedelta
+
 
 productos_ct = Blueprint("productos", __name__)
 
@@ -38,6 +40,47 @@ def productos_graficas():
             nombres=json.dumps(nombres), 
             precios=json.dumps(precios)
         )
+    else:
+        flash("Access denied. Please log in.", "error")
+        return redirect(url_for("login.sigin"))
+
+
+@productos_ct.route("/productos_por_fecha")
+def productos_por_fecha():
+    if "islogued" in session:
+        try:
+            db = get_db()
+            cursor = db.cursor()
+
+            # Get data for the last 7 days
+            today = datetime.now()
+            last_week = today - timedelta(days=7)
+            
+            query = """
+                SELECT DATE(fecha) as entry_date, COUNT(*) as product_count
+                FROM productos
+                WHERE fecha BETWEEN %s AND %s
+                GROUP BY DATE(fecha)
+                ORDER BY DATE(fecha) ASC
+            """
+            
+            cursor.execute(query, (last_week.strftime('%Y-%m-%d'), today.strftime('%Y-%m-%d')))
+            
+            product_data = cursor.fetchall()
+            cursor.close()
+
+            # Prepare data for the chart
+            labels = [data['entry_date'].strftime('%Y-%m-%d') for data in product_data]
+            values = [data['product_count'] for data in product_data]
+
+            return render_template(
+                "productos_por_fecha.html",
+                labels=json.dumps(labels),
+                values=json.dumps(values)
+            )
+        except Exception as e:
+            flash(f"Error loading product data: {e}", "error")
+            return redirect(url_for("admin.admin_dashboard"))
     else:
         flash("Access denied. Please log in.", "error")
         return redirect(url_for("login.sigin"))

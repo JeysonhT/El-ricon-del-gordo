@@ -1,15 +1,23 @@
-{% extends "base_Admin.html" %} {% block titulo %} Agregar Producto {% endblock
-titulo %} {% block body %}
+{% extends "base_Admin.html" %}
+{% block titulo %}
+  {% if producto %}
+    Editar Producto
+  {% else %}
+    Agregar Producto
+  {% endif %}
+{% endblock titulo %}
+
+{% block body %}
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
         <div class="card-header text-center">
-          <h2>Agregar Nuevo Producto</h2>
+          <h2>{% if producto %}Editar Producto{% else %}Agregar Nuevo Producto{% endif %}</h2>
         </div>
         <div class="card-body">
           <form
-            action="{{ url_for('productos.agregar_producto') }}"
+            action="{% if producto %}{{ url_for('productos.editar_producto', id=producto.id_producto) }}{% else %}{{ url_for('productos.agregar_producto') }}{% endif %}"
             method="post"
           >
             <div class="mb-4">
@@ -26,6 +34,7 @@ titulo %} {% block body %}
                 class="form-control"
                 id="nombre"
                 name="nombre"
+                value="{{ producto.nombre if producto else '' }}"
                 required
               />
             </div>
@@ -44,7 +53,7 @@ titulo %} {% block body %}
                 name="categoria"
                 rows="3"
                 required
-              ></textarea>
+              >{{ producto.categoria if producto else '' }}</textarea>
             </div>
             <div class="mb-4">
               <label
@@ -63,6 +72,7 @@ titulo %} {% block body %}
                   id="precio"
                   name="precio"
                   step="0.01"
+                  value="{{ producto.precio if producto else '' }}"
                   required
                 />
               </div>
@@ -84,6 +94,7 @@ titulo %} {% block body %}
                   id="cantidad"
                   name="cantidad"
                   step="0.01"
+                  value="{{ producto.cantidad if producto else '' }}"
                   required
                 />
               </div>
@@ -102,6 +113,7 @@ titulo %} {% block body %}
                 class="form-control"
                 id="fecha"
                 name="fecha"
+                value="{{ producto.fecha if producto else '' }}"
                 required
               />
             </div>

@@ -28,7 +28,7 @@ endblock titulo %} {% block body %}
               <td>${{ producto.precio }}</td>
               <td>{{ producto.fecha }}</td>
               <td>
-                <a href="#" class="btn btn-warning btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar los detalles de este producto.">Editar</a>
+                <a href="{{ url_for('productos.editar_producto', id=producto.id_producto) }}" class="btn btn-warning btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar los detalles de este producto.">Editar</a>
                 <form action="{{ url_for('productos.eliminar_producto', id=producto.id_producto) }}" method="post">
                   <button class="btn btn-danger btn-sm" type="submit" data-bs-toggle="tooltip" data-bs-placement="top" title="Eliminar este producto del inventario.">
                     Eliminar
