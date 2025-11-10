@@ -1,7 +1,6 @@
 from flask import Flask
 from .data.mysqlConexion import init_app
 
-
 def create_app():
     app = Flask(__name__, template_folder="../templates", static_folder="../static")
 

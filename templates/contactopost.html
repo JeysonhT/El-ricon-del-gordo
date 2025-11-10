@@ -66,6 +66,9 @@ contenido %}
                 name="nombre"
                 placeholder="Tu nombre completo"
                 required
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Ingresa tu nombre completo."
               />
               <div class="invalid-feedback">Por favor ingresa tu nombre.</div>
             </div>
@@ -78,6 +81,9 @@ contenido %}
                 name="email"
                 placeholder="ejemplo@correo.com"
                 required
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Ingresa tu dirección de correo electrónico."
               />
               <div class="invalid-feedback">
                 Por favor ingresa un correo válido.
@@ -92,13 +98,16 @@ contenido %}
                 rows="4"
                 placeholder="Escribe tu mensaje aquí..."
                 required
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Escribe aquí tu mensaje."
               ></textarea>
               <div class="invalid-feedback">
                 El mensaje no puede estar vacío.
               </div>
             </div>
             <div class="d-grid">
-              <button type="submit" class="btn btn-primary btn-lg">
+              <button type="submit" class="btn btn-primary btn-lg" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Enviar tu mensaje.">
                 <i class="bi bi-send-fill"></i> Enviar Mensaje
               </button>
             </div>

@@ -36,6 +36,9 @@ block contenido %}
     type="button"
     data-bs-target="#carouselExample"
     data-bs-slide="prev"
+    data-bs-toggle="tooltip"
+    data-bs-placement="right"
+    title="Ver imagen anterior."
   >
     <span class="carousel-control-prev-icon"></span>
     <span class="visually-hidden">Anterior</span>
@@ -45,6 +48,9 @@ block contenido %}
     type="button"
     data-bs-target="#carouselExample"
     data-bs-slide="next"
+    data-bs-toggle="tooltip"
+    data-bs-placement="left"
+    title="Ver imagen siguiente."
   >
     <span class="carousel-control-next-icon"></span>
     <span class="visually-hidden">Siguiente</span>
@@ -61,6 +67,9 @@ block contenido %}
           src="{{ url_for('static', filename='images/Comida_tipica.jpg') }}"
           class="card-img-top"
           alt="Web"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          title="Platillos tradicionales de Nicaragua."
         />
         <div class="card-body">
           <h5 class="card-title">Comida Tipica Nicaragüense</h5>
@@ -71,7 +80,14 @@ block contenido %}
             Perfecto para quienes buscan una experiencia culinaria auténtica y
             llena de sabor.
           </p>
-          <a href="#" class="btn btn-primary">Ver más</a>
+          <a
+            href="#"
+            class="btn btn-primary"
+            data-bs-toggle="tooltip"
+            data-bs-placement="bottom"
+            title="Haz clic para más información"
+            >Ver más</a
+          >
         </div>
       </div>
     </div>
@@ -81,6 +97,9 @@ block contenido %}
           src="{{ url_for('static', filename='images/Pescado.jpg') }}"
           class="card-img-top"
           alt="Productos"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          title="Delicias frescas del mar."
         />
         <div class="card-body">
           <h5 class="card-title">Comida marinera</h5>
@@ -90,7 +109,14 @@ block contenido %}
             mejores ingredientes. ¡Una experiencia culinaria que te transportará
             a la costa sin salir de la ciudad!
           </p>
-          <a href="#" class="btn btn-primary">Ver más</a>
+          <a
+            href="#"
+            class="btn btn-primary"
+            data-bs-toggle="tooltip"
+            data-bs-placement="bottom"
+            title="Haz clic para más información"
+            >Ver más</a
+          >
         </div>
       </div>
     </div>
@@ -100,6 +126,9 @@ block contenido %}
           src="{{ url_for('static', filename='images/Fritangas.jpeg') }}"
           class="card-img-top"
           alt="Cursos"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          title="El auténtico sabor de la fritanga nicaragüense."
         />
         <div class="card-body">
           <h5 class="card-title">Fritangas clasicas</h5>
@@ -110,7 +139,14 @@ block contenido %}
             una fiesta de sabores tradicionales! ¿Listo para disfrutar de la
             fritanga más deliciosa?
           </p>
-          <a href="#" class="btn btn-primary">Ver más</a>
+          <a
+            href="#"
+            class="btn btn-primary"
+            data-bs-toggle="tooltip"
+            data-bs-placement="bottom"
+            title="Haz clic para más información"
+            >Ver más</a
+          >
         </div>
       </div>
     </div>

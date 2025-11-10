@@ -13,7 +13,14 @@ titulo %} {% block body %}
             method="post"
           >
             <div class="mb-4">
-              <label for="nombre" class="form-label">Nombre del Producto</label>
+              <label
+                for="nombre"
+                class="form-label"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="Insertar el nombre del producto a usar"
+                >Nombre del Producto</label
+              >
               <input
                 type="text"
                 class="form-control"
@@ -23,7 +30,14 @@ titulo %} {% block body %}
               />
             </div>
             <div class="mb-4">
-              <label for="categoria" class="form-label">Categoria</label>
+              <label
+                for="categoria"
+                class="form-label"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="Ingresa la categoria del producto"
+                >Categoria</label
+              >
               <textarea
                 class="form-control"
                 id="categoria"
@@ -33,7 +47,14 @@ titulo %} {% block body %}
               ></textarea>
             </div>
             <div class="mb-4">
-              <label for="precio" class="form-label">Precio</label>
+              <label
+                for="precio"
+                class="form-label"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="Ingresa el precio de venta del producto"
+                >Precio</label
+              >
               <div class="input-group">
                 <span class="input-group-text">$</span>
                 <input
@@ -47,7 +68,14 @@ titulo %} {% block body %}
               </div>
             </div>
             <div class="mb-4">
-              <label for="cantidad" class="form-label">Cantidad</label>
+              <label
+                for="cantidad"
+                class="form-label"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="Ingresa la cantidad de producto disponible"
+                >Cantidad</label
+              >
               <div class="input-group">
                 <span class="input-group-text">$</span>
                 <input
@@ -60,13 +88,39 @@ titulo %} {% block body %}
                 />
               </div>
             </div>
+            <div class="mb-4">
+              <label
+                for="fecha"
+                class="form-label"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="Ingresa la fecha de registro del producto"
+                >Fecha</label
+              >
+              <input
+                type="date"
+                class="form-control"
+                id="fecha"
+                name="fecha"
+                required
+              />
+            </div>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
               <a
                 href="{{ url_for('productos.listar_productos') }}"
                 class="btn btn-secondary"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="Haz clic para cancelar el ingreso de productos"
                 >Cancelar</a
               >
-              <button type="submit" class="btn btn-primary">
+              <button
+                type="submit"
+                class="btn btn-primary"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="Haz clic para guardar el producto en tu base datos"
+              >
                 Guardar Producto
               </button>
             </div>

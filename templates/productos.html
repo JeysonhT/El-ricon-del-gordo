@@ -4,7 +4,7 @@ endblock titulo %} {% block body %}
   <div class="row">
     <div class="col-md-12">
       <h2 class="text-center mb-4">Listado de Productos</h2>
-      <a href="{{ url_for('productos.agregar_producto') }}" class="btn btn-primary mb-3">Agregar Producto</a>
+      <a href="{{ url_for('productos.agregar_producto') }}" class="btn btn-primary mb-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Añadir un nuevo producto al inventario.">Agregar Producto</a>
       <div class="table-responsive">
         <table id="productosTable" class="table table-striped table-bordered flex-column flex-md-row">
           <thead class="thead-dark">
@@ -14,6 +14,7 @@ endblock titulo %} {% block body %}
               <th scope="col">Categoria</th>
               <th scope="col">Cantidad</th>
               <th scope="col">Precio</th>
+              <th scope="col">Fecha</th>
               <th scope="col">Acciones</th>
             </tr>
           </thead>
@@ -25,10 +26,11 @@ endblock titulo %} {% block body %}
               <td>{{ producto.categoria }}</td>
               <td>{{ producto.cantidad }}</td>
               <td>${{ producto.precio }}</td>
+              <td>{{ producto.fecha }}</td>
               <td>
-                <a href="#" class="btn btn-warning btn-sm">Editar</a>
+                <a href="#" class="btn btn-warning btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar los detalles de este producto.">Editar</a>
                 <form action="{{ url_for('productos.eliminar_producto', id=producto.id_producto) }}" method="post">
-                  <button class="btn btn-danger btn-sm" type="submit">
+                  <button class="btn btn-danger btn-sm" type="submit" data-bs-toggle="tooltip" data-bs-placement="top" title="Eliminar este producto del inventario.">
                     Eliminar
                   </button>
                 </form>
@@ -36,7 +38,7 @@ endblock titulo %} {% block body %}
             </tr>
             {% else %}
             <tr>
-              <td colspan="5" class="text-center">
+              <td colspan="6" class="text-center">
                 No hay productos para mostrar.
               </td>
             </tr>

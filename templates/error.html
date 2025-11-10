@@ -3,5 +3,5 @@ contenido %}
 <h1>Error</h1>
 <h1>{{ code }}</h1>
 <p>{{ message }}</p>
-<a href="{{ url_for('login.sigin') }}">Go back to Login</a>
+<a href="{{ url_for('login.sigin') }}" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Volver a la página de inicio de sesión.">Go back to Login</a>
 {% endblock %}

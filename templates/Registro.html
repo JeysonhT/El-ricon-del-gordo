@@ -30,7 +30,7 @@ contenido %}
                 <p class="mb-5 text-center">Ingresar Informacion de Registro</p>
 
                 <!-- Botón Iniciar Sesión -->
-                <a href="{{url_for('login.sigin')}}" class="btn btn-lg btn-login">
+                <a href="{{url_for('login.sigin')}}" class="btn btn-lg btn-login" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Si ya tienes una cuenta, inicia sesión aquí.">
                   Iniciar Sesión
                 </a>
               </div>
@@ -52,20 +52,20 @@ contenido %}
                 <form action="{{ url_for('login.registro') }}" method="POST">
                   <div class="form-outline mb-4">
                     <input type="text" id="name" name="name" class="form-control form-control-lg"
-                      placeholder="Nombre completo" />
+                      placeholder="Nombre completo" data-bs-toggle="tooltip" data-bs-placement="top" title="Ingresa tu nombre y apellidos." />
                   </div>
                   <div class="form-outline mb-4">
                     <input type="email" id="email" name="email" class="form-control form-control-lg"
-                      placeholder="Correo electrónico" />
+                      placeholder="Correo electrónico" data-bs-toggle="tooltip" data-bs-placement="top" title="Ingresa una dirección de correo electrónico válida." />
                   </div>
                   <div class="form-outline mb-4">
                     <input type="password" id="password" name="password" class="form-control form-control-lg"
-                      placeholder="Contraseña" />
+                      placeholder="Contraseña" data-bs-toggle="tooltip" data-bs-placement="top" title="Crea una contraseña segura." />
                   </div>
 
                   <!-- Botón Registrarse -->
                   <div class="d-grid">
-                    <button class="btn btn-lg btn-register" type="submit">
+                    <button class="btn btn-lg btn-register" type="submit" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Crear tu cuenta.">
                       Registrarse
                     </button>
                   </div>

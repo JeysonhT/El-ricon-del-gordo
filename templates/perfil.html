@@ -118,7 +118,7 @@ endblock %} {% block body %}
       <div class="profile-card">
         <div class="profile-header">
           <img src="{{ url_for('static', filename='images/persona-de-libre-dedicacion.png') }}" alt="Foto de perfil"
-            class="profile-picture" />
+            class="profile-picture" data-bs-toggle="tooltip" data-bs-placement="top" title="Cambiar foto de perfil." />
           <h1 class="user-name">Admin</h1>
           {% if email %}
           <p class="user-email">{{ email }}</p>
@@ -127,7 +127,7 @@ endblock %} {% block body %}
 
         <div class="profile-body">
           <div class="text-center mb-4">
-            <a href="{{url_for('user.get_users')}}" class="btn edit-profile-btn">
+            <a href="{{url_for('user.get_users')}}" class="btn edit-profile-btn" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gestionar la lista de usuarios registrados.">
               <i class="bi bi-pencil-fill me-2"></i> Administrar Usuarios
             </a>
           </div>
@@ -141,23 +141,23 @@ endblock %} {% block body %}
             <h3 class="profile-section-title">Actividad Reciente</h3>
             <ul class="list-group activity-list">
               <li class="list-group-item">
-                <i class="bi bi-chat-dots-fill activity-icon"></i>
+                <i class="bi bi-chat-dots-fill activity-icon" data-bs-toggle="tooltip" data-bs-placement="left" title="Ver comentario."></i>
                 <span class="activity-text">Comentó en la receta de <strong>"Carne Asada"</strong></span>
                 <span class="activity-time">hace 2 horas</span>
               </li>
               <li class="list-group-item">
-                <i class="bi bi-star-fill activity-icon"></i>
+                <i class="bi bi-star-fill activity-icon" data-bs-toggle="tooltip" data-bs-placement="left" title="Ver platillo favorito."></i>
                 <span class="activity-text">Marcó como favorito <strong>"Rondón"</strong></span>
                 <span class="activity-time">hace 1 día</span>
               </li>
               <li class="list-group-item">
-                <i class="bi bi-hand-thumbs-up-fill activity-icon"></i>
+                <i class="bi bi-hand-thumbs-up-fill activity-icon" data-bs-toggle="tooltip" data-bs-placement="left" title="Ver publicación."></i>
                 <span class="activity-text">Le gustó la publicación sobre
                   <strong>"Quesillos de Nagarote"</strong></span>
                 <span class="activity-time">hace 3 días</span>
               </li>
               <li class="list-group-item">
-                <i class="bi bi-plus-circle-fill activity-icon"></i>
+                <i class="bi bi-plus-circle-fill activity-icon" data-bs-toggle="tooltip" data-bs-placement="left" title="Ver detalles de la comunidad."></i>
                 <span class="activity-text">Se unió a la comunidad de "El Rincón del Gordo"</span>
                 <span class="activity-time">hace 1 semana</span>
               </li>

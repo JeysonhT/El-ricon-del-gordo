@@ -108,6 +108,9 @@ icons.min.css"
                 <a
                   class="nav-link"
                   href="{{ url_for('admin.admin_dashboard') }}"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="bottom"
+                  title="Volver a la página principal del panel."
                   >Inicio</a
                 >
               </li>
@@ -118,6 +121,9 @@ icons.min.css"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="bottom"
+                  title="Gestionar productos."
                 >
                   Productos
                 </a>
@@ -126,6 +132,9 @@ icons.min.css"
                     <a
                       class="dropdown-item"
                       href="{{ url_for('productos.agregar_producto') }}"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="left"
+                      title="Añadir un nuevo producto."
                       >Agregar</a
                     >
                   </li>
@@ -133,7 +142,20 @@ icons.min.css"
                     <a
                       class="dropdown-item"
                       href="{{ url_for('productos.listar_productos') }}"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="left"
+                      title="Ver la lista de productos."
                       >Listar</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="{{ url_for('productos.productos_graficas') }}"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="left"
+                      title="Ver gráficos de productos."
+                      >Gráficas</a
                     >
                   </li>
                   <li><a class="dropdown-item" href="#"></a></li>
@@ -142,7 +164,7 @@ icons.min.css"
 
               <li class="nav-item">
                 <!--Botones listar-->
-                <a class="nav-link" href="{{url_for('home.perfil')}}">Perfil</a>
+                <a class="nav-link" href="{{url_for('home.perfil')}}" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ver y editar tu perfil de usuario.">Perfil</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href=""></a>
@@ -158,6 +180,9 @@ icons.min.css"
             <a
               class="btn btn-outline-success"
               href="{{ url_for('login.logout') }}"
+              data-bs-toggle="tooltip"
+              data-bs-placement="bottom"
+              title="Cerrar sesión en el sistema."
               >SALIR</a
             >
           </div>
@@ -272,6 +297,8 @@ icons.min.css"
         }
       });
     </script>
-    {% block scripts %}{% endblock %}
+    {% block scripts %}
+    <script src="{{ url_for('static', filename='js/tooltip.js') }}"></script>
+    {% endblock %}
   </body>
 </html>

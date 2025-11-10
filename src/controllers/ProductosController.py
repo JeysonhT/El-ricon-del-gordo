@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash, session
 from ..data.mysqlConexion import get_db
+import json
 
 productos_ct = Blueprint("productos", __name__)
 
@@ -20,6 +21,28 @@ def listar_productos():
         return redirect(url_for("login.sigin"))
 
 
+@productos_ct.route("/productos_graficas")
+def productos_graficas():
+    if "islogued" in session:
+        db = get_db()
+        cursor = db.cursor()
+        cursor.execute("SELECT nombre, precio FROM productos ORDER BY precio DESC")
+        productos = cursor.fetchall()
+        cursor.close()
+        
+        nombres = [producto['nombre'] for producto in productos]
+        precios = [float(producto['precio']) for producto in productos]
+        
+        return render_template(
+            "productos_graficas.html", 
+            nombres=json.dumps(nombres), 
+            precios=json.dumps(precios)
+        )
+    else:
+        flash("Access denied. Please log in.", "error")
+        return redirect(url_for("login.sigin"))
+
+
 @productos_ct.route("/agregar_producto", methods=["GET", "POST"])
 def agregar_producto():
     if "islogued" in session and session.get("id_role") == 2:
@@ -28,15 +51,16 @@ def agregar_producto():
             categoria = request.form.get("categoria")
             precio = request.form.get("precio")
             cantidad = request.form.get("cantidad")
+            fecha = request.form.get("fecha")
 
-            if not nombre or not categoria or not precio or not cantidad:
+            if not nombre or not categoria or not precio or not cantidad or not fecha:
                 flash("All fields are required.", "error")
                 return redirect(url_for("productos.agregar_producto"))
 
             try:
                 db = get_db()
                 cursor = db.cursor()
-                args = (categoria, nombre, float(precio), int(cantidad))
+                args = (categoria, nombre, float(precio), int(cantidad), fecha)
                 cursor.callproc("insertarProductos", args)
                 db.commit()
                 cursor.close()
@@ -63,13 +87,14 @@ def editar_producto(id):
             categoria = request.form.get("categoria")
             precio = request.form.get("precio")
             cantidad = request.form.get("cantidad")
+            fecha = request.form.get("fecha")
 
-            if not nombre or not categoria or not precio or not cantidad:
+            if not nombre or not categoria or not precio or not cantidad or not fecha:
                 flash("All fields are required.", "error")
                 return redirect(url_for("productos.editar_producto", id=id))
 
             try:
-                args = (id, categoria, nombre, float(precio), int(cantidad))
+                args = (id, categoria, nombre, float(precio), int(cantidad), fecha)
                 cursor.callproc("actualizar_producto", args)
                 db.commit()
                 flash("Product updated successfully!", "success")

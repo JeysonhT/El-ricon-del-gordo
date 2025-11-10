@@ -64,6 +64,9 @@ contenido %}
                 <a
                   href="{{ url_for('login.registro') }}"
                   class="btn btn-lg btn-register"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="bottom"
+                  title="Haz clic ir al registro de tu cuenta por primera vez"
                 >
                   Registrarse
                 </a>
@@ -73,13 +76,23 @@ contenido %}
             <!-- Panel derecho -->
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-dark">
-                <h2 class="fw-bold mb-4 text-center">Iniciar Sesión</h2>
+                <h2
+                  class="fw-bold mb-4 text-center"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="bottom"
+                  title="Haz clicñ para entrar al sistema"
+                >
+                  Iniciar Sesión
+                </h2>
 
                 <!-- Botón de Google -->
                 <div class="d-grid mb-4">
                   <button
                     class="btn btn-lg d-flex align-items-center justify-content-center btn-google"
                     type="button"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="bottom"
+                    title="Haz clic para iniciar sesión con google"
                   >
                     <img
                       src="{{ url_for('static', filename='googleicon.png') }}"
@@ -105,6 +118,9 @@ contenido %}
                       id="email"
                       name="email"
                       class="form-control form-control-lg"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="bottom"
+                      title="Ingresa tu correo electronico para entrar al sistema"
                       placeholder="Ingresa tu correo electrónico"
                     />
                   </div>
@@ -114,13 +130,23 @@ contenido %}
                       id="password"
                       name="password"
                       class="form-control form-control-lg"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="bottom"
+                      title="Ingresa tu clave secreta super importante"
                       placeholder="Ingresa tu contraseña"
                     />
                   </div>
 
                   <!-- Botón Iniciar Sesión -->
                   <div class="d-grid">
-                    <button class="btn btn-lg btn-login" type="submit">
+                    <button
+                      class="btn btn-lg btn-login"
+                      type="submit"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="bottom"
+                      title="Haz clic para entrar al sistema con tu cuenta
+                      "
+                    >
                       Iniciar Sesión
                     </button>
                   </div>

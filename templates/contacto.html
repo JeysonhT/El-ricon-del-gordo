@@ -13,14 +13,14 @@
 
 <form action="" method="get">
     <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="nombre">
+    <input type="text" id="nombre" name="nombre" data-bs-toggle="tooltip" data-bs-placement="right" title="Ingresa tu nombre completo.">
     <br>
     <label for="email">Email:</label>
-    <input type="email" id="email" name="email">
+    <input type="email" id="email" name="email" data-bs-toggle="tooltip" data-bs-placement="right" title="Ingresa tu dirección de correo electrónico.">
     <br>
     <label for="mensaje">Mensaje:</label>
-    <textarea id="mensaje" name="mensaje"></textarea>
+    <textarea id="mensaje" name="mensaje" data-bs-toggle="tooltip" data-bs-placement="right" title="Escribe aquí tu mensaje."></textarea>
     <br>
-    <input type="submit" value="Enviar">
+    <input type="submit" value="Enviar" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Enviar el formulario de contacto.">
 </form>
 {% endblock %}
