@@ -1,10 +1,13 @@
 from flask import Blueprint, flash, render_template, request, redirect, url_for, session
 from ..Services.UserServices import UserService
 from ..models.Users import User
+from ..Services.CryptoService import PasswordService
 
 user_ct = Blueprint("user", __name__)
 
 service = UserService()
+
+passService = PasswordService()
 
 
 def form_validator(email, name, password, id_role):
@@ -38,10 +41,13 @@ def create_user():
             role = request.form.get("role")
 
             if form_validator(email, password, name, role):
+                
+                hash_password = passService.hash_password(password=password)
+                
                 new_user = User(
                     _id_user=None,
                     _email=email,
-                    _password=password,
+                    _password=hash_password,
                     _name=name,
                     _id_role=role,
                 )
@@ -78,7 +84,7 @@ def update_user():
             # 2. Decidir qué contraseña usar
             if password:
                 # Si se proporciona una nueva contraseña, úsala
-                password_to_use = password
+                password_to_use = passService.hash_password(password=password)
             else:
                 # Si no, mantén la contraseña antigua
                 password_to_use = user.password
