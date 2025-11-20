@@ -114,4 +114,4 @@ def registro():
 @login_ct.route("/logout")
 def logout():
     session.clear()
-    return redirect(url_for("home.index"))
+    return redirect(url_for("home.inicio"))
